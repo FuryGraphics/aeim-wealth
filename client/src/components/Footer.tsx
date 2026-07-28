@@ -25,7 +25,7 @@ export default function Footer() {
           {/* Brand */}
           <div>
             <div className="flex items-center gap-3 mb-4">
-              <img src="/manus-storage/logo_f854dc88.png" alt="AEIM Wealth Management" className="w-10 h-10 object-contain" />
+              <img src="/images/logo.png" alt="AEIM Wealth Management" className="w-10 h-10 object-contain" />
               <div className="flex flex-col leading-none">
                 <span className="font-serif text-2xl font-bold text-[#C9A84C] tracking-wide">
                   AEIM

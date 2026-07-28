@@ -39,7 +39,7 @@ export default function Navbar() {
           <div className="flex items-center justify-between h-20">
             {/* Logo */}
             <Link href="/" className="flex items-center gap-3 shrink-0">
-              <img src="/manus-storage/logo_f854dc88.png" alt="AEIM Wealth Management" className="w-10 h-10 object-contain" />
+              <img src="/images/logo.png" alt="AEIM Wealth Management" className="w-10 h-10 object-contain" />
               <div className="flex flex-col leading-none">
                 <span className="font-serif text-2xl font-bold text-[#C9A84C] tracking-wide">
                   AEIM

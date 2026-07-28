@@ -39,7 +39,7 @@ export const SERVICES = [
     slug: "wealth-management",
     title: "Wealth Management",
     short: "Comprehensive wealth management services for individuals and families across DuPage County.",
-    image: "/manus-storage/service-wealth_c01d934d.jpg",
+    image: "/images/service-wealth.jpg",
     subServices: [
       { title: "Retirement Planning", slug: "retirement-planning" },
       { title: "Estate & Legacy Planning", slug: "estate-legacy-planning" },
@@ -74,7 +74,7 @@ export const SERVICES = [
     slug: "retirement-planning",
     title: "Retirement Planning",
     short: "Retirement income planning, Social Security optimization, and pension analysis for a confident retirement.",
-    image: "/manus-storage/service-retirement_43a7fe62.jpg",
+    image: "/images/service-retirement.jpg",
     parent: "wealth-management",
     intro:
       "Retirement planning is about more than a number on a statement. It is about creating a reliable income stream that lasts your lifetime, optimizing Social Security, managing taxes in retirement, and making sure your lifestyle is sustainable for decades.",
@@ -104,7 +104,7 @@ export const SERVICES = [
     slug: "estate-legacy-planning",
     title: "Estate & Legacy Planning",
     short: "Family legacy planning and estate tax elimination strategies to protect what you have built.",
-    image: "/manus-storage/service-estate_192aef49.jpg",
+    image: "/images/service-estate.jpg",
     parent: "wealth-management",
     intro:
       "Estate and legacy planning ensures that the wealth you have built passes to the people and causes you care about efficiently. We focus on estate tax elimination strategies, beneficiary coordination, and multi-generational planning that preserves your legacy.",
@@ -134,7 +134,7 @@ export const SERVICES = [
     slug: "investment-strategies",
     title: "Investment Strategies",
     short: "Custom investment portfolios built on evidence, not speculation. Low-cost, tax-efficient, and diversified.",
-    image: "/manus-storage/service-investment_0c2b05bf.jpg",
+    image: "/images/service-investment.jpg",
     parent: "wealth-management",
     intro:
       "Our investment strategies are built on academic research, not market predictions. We construct diversified, low-cost, tax-efficient portfolios tailored to your goals and risk tolerance. As an independent fiduciary, we select investments with no product quotas or company pressure.",
@@ -164,7 +164,7 @@ export const SERVICES = [
     slug: "tax-reduction",
     title: "Tax Reduction",
     short: "Proactive tax reduction strategies that keep more of what you earn, year after year.",
-    image: "/manus-storage/service-tax_2140ffa3.jpg",
+    image: "/images/service-tax.jpg",
     parent: "wealth-management",
     intro:
       "Taxes can be one of the largest drains on your wealth over time. Our tax reduction strategies are designed to minimize your tax burden legally and proactively, from investment tax efficiency to retirement withdrawal planning and estate tax elimination.",
@@ -194,7 +194,7 @@ export const SERVICES = [
     slug: "family-financial-planning",
     title: "Family Financial Planning",
     short: "Multi-generational financial planning that protects your family now and for decades to come.",
-    image: "/manus-storage/service-family_3450d6f1.jpg",
+    image: "/images/service-family.jpg",
     parent: "wealth-management",
     intro:
       "Family financial planning goes beyond your own balance sheet. We help you plan for your children's education, your parents' long-term care, and the smooth transfer of wealth across generations. Our goal is to build long-term, multi-generational client-advisor relationships.",

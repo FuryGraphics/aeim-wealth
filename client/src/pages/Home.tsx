@@ -38,7 +38,7 @@ export default function Home() {
       <section className="relative min-h-[90vh] flex items-center overflow-hidden">
         <div className="absolute inset-0 z-0">
           <img
-            src="/manus-storage/hero-bg_6224e36e.jpg"
+            src="/images/hero-bg.jpg"
             alt="Modern office building at dusk representing premium wealth management"
             className="w-full h-full object-cover"
             loading="eager"
@@ -185,7 +185,7 @@ export default function Home() {
       <section className="relative bg-[#0B1B2B] overflow-hidden">
         <div className="absolute inset-0 z-0">
           <img
-            src="/manus-storage/stats-office_ddfff0c4.jpg"
+            src="/images/stats-office.jpg"
             alt="AEIM Wealth Management office interior"
             className="w-full h-full object-cover opacity-30"
             loading="lazy"
@@ -212,7 +212,7 @@ export default function Home() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <Reveal>
               <img
-                src="/manus-storage/about-advisor_3b88c09d.jpg"
+                src="/images/about-advisor.jpg"
                 alt="Bryan M. Uselding, financial advisor at AEIM Wealth Management"
                 className="rounded-lg shadow-lg w-full"
                 loading="lazy"

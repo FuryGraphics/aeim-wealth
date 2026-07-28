@@ -24,7 +24,7 @@ export default function Blog() {
       <section className="relative bg-[#0B1B2B] pt-32 pb-16 lg:pt-40 lg:pb-24 overflow-hidden">
         <div className="absolute inset-0 z-0 opacity-15">
           <img
-            src="/manus-storage/cta-band_9f8629e2.jpg"
+            src="/images/cta-band.jpg"
             alt=""
             className="w-full h-full object-cover"
             loading="eager"

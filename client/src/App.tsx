@@ -15,6 +15,7 @@ import Blog from "./pages/Blog";
 import Contact from "./pages/Contact";
 import { Disclaimer, PrivacyPolicy } from "./pages/Legal";
 import { SERVICES, LOCATIONS } from "./lib/siteData";
+import ChatWidget from "./components/ChatWidget";
 
 function Router() {
   return (
@@ -51,6 +52,7 @@ function App() {
         <TooltipProvider>
           <Toaster />
           <Router />
+          <ChatWidget />
         </TooltipProvider>
       </ThemeProvider>
     </ErrorBoundary>

@@ -29,7 +29,7 @@ export default function Services() {
       <section className="relative bg-[#0B1B2B] pt-32 pb-16 lg:pt-40 lg:pb-24 overflow-hidden">
         <div className="absolute inset-0 z-0 opacity-20">
           <img
-          src="/manus-storage/hero-bg_6224e36e.jpg"
+          src="/images/hero-bg.jpg"
             alt=""
             className="w-full h-full object-cover"
             loading="eager"

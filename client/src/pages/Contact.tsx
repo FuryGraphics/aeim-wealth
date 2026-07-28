@@ -1,10 +1,9 @@
-import { useState } from "react";
-import { Phone, Mail, MapPin, Clock, Send, CheckCircle2 } from "lucide-react";
+import { Phone, Mail, MapPin, Clock } from "lucide-react";
 import { BUSINESS } from "@/lib/siteData";
 import { useSEO } from "@/lib/seo";
 import { Reveal } from "@/components/Reveal";
 import Breadcrumb from "@/components/Breadcrumb";
-import { toast } from "sonner";
+import CaseclimbForm from "@/components/CaseclimbForm";
 
 export default function Contact() {
   useSEO({
@@ -19,21 +18,13 @@ export default function Contact() {
     },
   });
 
-  const [submitted, setSubmitted] = useState(false);
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    setSubmitted(true);
-    toast.success("Thank you! We will be in touch within 2 hours.");
-  };
-
   return (
     <>
       {/* Hero */}
       <section className="relative bg-[#0B1B2B] pt-32 pb-16 lg:pt-40 lg:pb-24 overflow-hidden">
         <div className="absolute inset-0 z-0 opacity-15">
           <img
-            src="/manus-storage/hero-bg_6224e36e.jpg"
+            src="/images/hero-bg.jpg"
             alt=""
             className="w-full h-full object-cover"
             loading="eager"
@@ -67,81 +58,9 @@ export default function Contact() {
                 Fill out the form below and we will get back to you within 2 hours during business hours.
               </p>
 
-              {submitted ? (
-                <div className="mt-8 bg-[#F5F5F0] rounded-lg p-8 text-center">
-                  <CheckCircle2 className="w-12 h-12 text-[#C9A84C] mx-auto mb-4" />
-                  <h3 className="font-serif text-xl font-semibold text-[#0B1B2B]">Thank You!</h3>
-                  <p className="mt-2 text-sm text-[#5A6A7A]">
-                    Your message has been received. We will be in touch within 2 hours.
-                  </p>
-                </div>
-              ) : (
-                <form onSubmit={handleSubmit} className="mt-8 space-y-5">
-                  <div>
-                    <label className="block text-sm font-medium text-[#0B1B2B] mb-1.5">
-                      Full Name *
-                    </label>
-                    <input
-                      type="text"
-                      required
-                      placeholder="John Smith"
-                      className="w-full px-4 py-3 rounded-md border border-gray-200 bg-[#F5F5F0] text-[#0B1B2B] focus:outline-none focus:border-[#C9A84C] focus:ring-1 focus:ring-[#C9A84C] transition-colors"
-                    />
-                  </div>
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
-                    <div>
-                      <label className="block text-sm font-medium text-[#0B1B2B] mb-1.5">
-                        Phone Number *
-                      </label>
-                      <input
-                        type="tel"
-                        required
-                        placeholder="(630) 555-0000"
-                        className="w-full px-4 py-3 rounded-md border border-gray-200 bg-[#F5F5F0] text-[#0B1B2B] focus:outline-none focus:border-[#C9A84C] focus:ring-1 focus:ring-[#C9A84C] transition-colors"
-                      />
-                    </div>
-                    <div>
-                      <label className="block text-sm font-medium text-[#0B1B2B] mb-1.5">
-                        Email Address
-                      </label>
-                      <input
-                        type="email"
-                        placeholder="john@example.com"
-                        className="w-full px-4 py-3 rounded-md border border-gray-200 bg-[#F5F5F0] text-[#0B1B2B] focus:outline-none focus:border-[#C9A84C] focus:ring-1 focus:ring-[#C9A84C] transition-colors"
-                      />
-                    </div>
-                  </div>
-                  <div>
-                    <label className="block text-sm font-medium text-[#0B1B2B] mb-1.5">
-                      What can we help with?
-                    </label>
-                    <select className="w-full px-4 py-3 rounded-md border border-gray-200 bg-[#F5F5F0] text-[#0B1B2B] focus:outline-none focus:border-[#C9A84C] focus:ring-1 focus:ring-[#C9A84C] transition-colors">
-                      <option>General Consultation</option>
-                      <option>Retirement Planning</option>
-                      <option>Estate & Legacy Planning</option>
-                      <option>Investment Strategies</option>
-                      <option>Tax Reduction</option>
-                      <option>Family Financial Planning</option>
-                    </select>
-                  </div>
-                  <div>
-                    <label className="block text-sm font-medium text-[#0B1B2B] mb-1.5">
-                      Message
-                    </label>
-                    <textarea
-                      rows={4}
-                      placeholder="Tell us a bit about your situation..."
-                      className="w-full px-4 py-3 rounded-md border border-gray-200 bg-[#F5F5F0] text-[#0B1B2B] focus:outline-none focus:border-[#C9A84C] focus:ring-1 focus:ring-[#C9A84C] transition-colors resize-none"
-                    />
-                  </div>
-                  <button
-                    type="submit"
-                    className="flex items-center justify-center gap-2 w-full py-3.5 bg-[#C9A84C] text-[#0B1B2B] rounded-md font-semibold hover:bg-[#b8973f] transition-colors"
-                  >
-                    <Send className="w-4 h-4" /> Send Message
-                  </button>
-                </form>
-              )}
+              <div className="mt-8">
+                <CaseclimbForm />
+              </div>
             </Reveal>
 
             {/* Contact Info */}

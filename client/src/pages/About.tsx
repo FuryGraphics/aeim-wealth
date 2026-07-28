@@ -34,7 +34,7 @@ export default function About() {
       <section className="relative bg-[#0B1B2B] pt-32 pb-16 lg:pt-40 lg:pb-24 overflow-hidden">
         <div className="absolute inset-0 z-0 opacity-20">
           <img
-            src="/manus-storage/about-advisor_3b88c09d.jpg"
+            src="/images/about-advisor.jpg"
             alt=""
             className="w-full h-full object-cover"
             loading="eager"
@@ -61,7 +61,7 @@ export default function About() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <Reveal>
               <img
-                src="/manus-storage/about-advisor_3b88c09d.jpg"
+                src="/images/about-advisor.jpg"
                 alt={`${BUSINESS.owner}, financial advisor at AEIM Wealth Management`}
                 className="rounded-lg shadow-lg w-full"
                 loading="lazy"
