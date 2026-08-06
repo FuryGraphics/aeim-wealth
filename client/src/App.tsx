@@ -10,6 +10,7 @@ import Services from "./pages/Services";
 import ServiceDetail from "./pages/ServiceDetail";
 import LocationPage from "./pages/LocationPage";
 import About from "./pages/About";
+import Process from "./pages/Process";
 import Testimonials from "./pages/Testimonials";
 import Blog from "./pages/Blog";
 import Contact from "./pages/Contact";
@@ -27,6 +28,7 @@ function Router() {
           {(params) => <ServiceDetail slug={params.slug} />}
         </Route>
         <Route path="/about" component={About} />
+        <Route path="/process" component={Process} />
         <Route path="/testimonials" component={Testimonials} />
         <Route path="/blog" component={Blog} />
         <Route path="/contact" component={Contact} />

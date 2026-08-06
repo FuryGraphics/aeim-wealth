@@ -1,10 +1,12 @@
 import { Link } from "wouter";
 import { Phone, CheckCircle2, Award, Shield, Eye } from "lucide-react";
-import { BUSINESS } from "@/lib/siteData";
+import { BUSINESS, CORE_VALUES } from "@/lib/siteData";
 import { useSEO } from "@/lib/seo";
 import { Reveal, RevealStagger, RevealItem } from "@/components/Reveal";
 import Breadcrumb from "@/components/Breadcrumb";
 import CTASection from "@/components/CTASection";
+
+const VALUE_ICONS = { award: Award, shield: Shield, eye: Eye } as const;
 
 export default function About() {
   useSEO({
@@ -20,7 +22,7 @@ export default function About() {
       telephone: BUSINESS.phone,
       address: {
         "@type": "PostalAddress",
-        streetAddress: "650 Warrenville Rd, Suite 100",
+        streetAddress: BUSINESS.addressShort,
         addressLocality: "Lisle",
         addressRegion: "IL",
         postalCode: "60532",
@@ -70,18 +72,37 @@ export default function About() {
             <Reveal delay={0.1}>
               <p className="text-xs uppercase tracking-[0.2em] text-[#C9A84C] mb-3">Your Advisor</p>
               <h2 className="font-serif text-3xl lg:text-4xl font-bold text-[#0B1B2B] gold-underline">
-                {BUSINESS.owner}
+                {BUSINESS.ownerFull}
               </h2>
               <div className="mt-6 space-y-4 text-base text-[#5A6A7A] leading-relaxed">
                 <p>
-                  Bryan M. Uselding is the founder and principal advisor of AEIM Wealth Management. With over 17 years of experience in financial planning and wealth management, Bryan has dedicated his career to helping families and individuals across DuPage County achieve financial confidence.
+                  With over 17 years of financial planning experience, Bryan M. Uselding, CFS®, CAS® takes the time to diligently listen to his clients' needs and creates a strategy to help them work towards their retirement goals.
                 </p>
                 <p>
-                  As an independent, fiduciary advisor, Bryan is not tied to any company's products or sales quotas. He chose independence so he could provide truly unbiased advice, always acting in his clients' best interest. This is not just a philosophy, it is a legal obligation.
+                  As a fiduciary in the financial services industry, Bryan recognizes the need for unique and personalized services as investors near or enter into retirement. At this new stage of their life, it is paramount that we truly understand our investment strategies: reduce risk, help protect assets, and create a lifetime sustainable income.
                 </p>
                 <p>
-                  Bryan believes in building long-term, multi-generational relationships. Many of his clients have been with him for over a decade, and he now advises the children of his earliest clients. This continuity is the foundation of effective wealth management.
+                  Bryan has made these retirement issues his area of focus and passion. Over the past 17 years he has established himself as an industry authority with a Certified Fund Specialist (CFS®) designation and a Certified Annuity Specialist (CAS®) designation from the Institute of Business and Finance. He has also been heard discussing financial planning topics on the Chicago radio station AM560 The Answer.
                 </p>
+                <p>
+                  Bryan knows that for many near-retirees, retirement planning was never a subject taught to them in school. Many are unsure of when they can afford to retire, whether they will run out of money in retirement, and afraid of being &ldquo;sold&rdquo; some costly financial product. This is why Bryan believes that helping educate others on their financial retirement options is the most important service he can provide. If you don't understand something, you will never feel comfortable owning it.
+                </p>
+              </div>
+
+              {/* Designations */}
+              <div className="mt-8 flex flex-wrap gap-3">
+                {[
+                  "CFS® — Certified Fund Specialist",
+                  "CAS® — Certified Annuity Specialist",
+                  "Heard on AM560 The Answer",
+                ].map((item) => (
+                  <span
+                    key={item}
+                    className="text-xs px-3 py-1.5 bg-[#C9A84C]/10 text-[#0B1B2B] rounded border border-[#C9A84C]/30 font-medium"
+                  >
+                    {item}
+                  </span>
+                ))}
               </div>
             </Reveal>
           </div>
@@ -99,39 +120,22 @@ export default function About() {
           </Reveal>
 
           <RevealStagger className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-            <RevealItem>
-              <div className="text-center">
-                <div className="w-16 h-16 mx-auto rounded-full bg-[#C9A84C]/10 border border-[#C9A84C]/30 flex items-center justify-center mb-4">
-                  <Award className="w-8 h-8 text-[#C9A84C]" />
-                </div>
-                <h3 className="font-serif text-xl font-semibold text-white mb-3">Independent</h3>
-                <p className="text-sm text-white/60 leading-relaxed">
-                  We are not tied to any company's products. We provide unbiased advice across the full universe of financial solutions, with no company pressure or restrictions.
-                </p>
-              </div>
-            </RevealItem>
-            <RevealItem>
-              <div className="text-center">
-                <div className="w-16 h-16 mx-auto rounded-full bg-[#C9A84C]/10 border border-[#C9A84C]/30 flex items-center justify-center mb-4">
-                  <Shield className="w-8 h-8 text-[#C9A84C]" />
-                </div>
-                <h3 className="font-serif text-xl font-semibold text-white mb-3">Fiduciary</h3>
-                <p className="text-sm text-white/60 leading-relaxed">
-                  We are legally obligated to act in your best interest 100% of the time. We do not earn commissions on product sales, so our recommendations are always unbiased.
-                </p>
-              </div>
-            </RevealItem>
-            <RevealItem>
-              <div className="text-center">
-                <div className="w-16 h-16 mx-auto rounded-full bg-[#C9A84C]/10 border border-[#C9A84C]/30 flex items-center justify-center mb-4">
-                  <Eye className="w-8 h-8 text-[#C9A84C]" />
-                </div>
-                <h3 className="font-serif text-xl font-semibold text-white mb-3">Transparent</h3>
-                <p className="text-sm text-white/60 leading-relaxed">
-                  Trust and open communication are the foundation of our practice. No product-pushing, no hard-selling, and no hidden fees. Full transparency, always.
-                </p>
-              </div>
-            </RevealItem>
+            {CORE_VALUES.map((value) => {
+              const Icon = VALUE_ICONS[value.icon as keyof typeof VALUE_ICONS];
+              return (
+                <RevealItem key={value.title}>
+                  <div className="text-center">
+                    <div className="w-16 h-16 mx-auto rounded-full bg-[#C9A84C]/10 border border-[#C9A84C]/30 flex items-center justify-center mb-4">
+                      <Icon className="w-8 h-8 text-[#C9A84C]" />
+                    </div>
+                    <h3 className="font-serif text-xl font-semibold text-white mb-3">
+                      {value.title}
+                    </h3>
+                    <p className="text-sm text-white/60 leading-relaxed">{value.body}</p>
+                  </div>
+                </RevealItem>
+              );
+            })}
           </RevealStagger>
         </div>
       </section>

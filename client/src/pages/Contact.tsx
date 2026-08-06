@@ -1,5 +1,5 @@
 import { Phone, Mail, MapPin, Clock } from "lucide-react";
-import { BUSINESS } from "@/lib/siteData";
+import { BUSINESS, OFFICES } from "@/lib/siteData";
 import { useSEO } from "@/lib/seo";
 import { Reveal } from "@/components/Reveal";
 import Breadcrumb from "@/components/Breadcrumb";
@@ -97,13 +97,29 @@ export default function Contact() {
                   </a>
                 </div>
 
-                {/* Address */}
+                {/* Offices */}
                 <div className="bg-[#F5F5F0] rounded-lg p-8">
                   <div className="flex items-center gap-3 mb-4">
                     <MapPin className="w-5 h-5 text-[#C9A84C]" />
                     <h3 className="font-serif text-xl font-semibold text-[#0B1B2B]">Visit Us</h3>
                   </div>
-                  <p className="text-base text-[#5A6A7A]">{BUSINESS.address}</p>
+                  <div className="space-y-5">
+                    {OFFICES.map((office) => (
+                      <div key={office.label}>
+                        <p className="text-xs uppercase tracking-[0.15em] text-[#C9A84C] font-semibold">
+                          {office.label}
+                        </p>
+                        <p className="mt-1 text-base text-[#5A6A7A]">
+                          {office.street}
+                          <br />
+                          {office.cityStateZip}
+                        </p>
+                        {office.note && (
+                          <p className="mt-1 text-sm font-medium text-[#0B1B2B]">{office.note}</p>
+                        )}
+                      </div>
+                    ))}
+                  </div>
                 </div>
 
                 {/* Hours */}
@@ -127,21 +143,34 @@ export default function Contact() {
         </div>
       </section>
 
-      {/* Map */}
+      {/* Maps */}
       <section className="bg-[#F5F5F0]">
         <div className="container py-16">
-          <Reveal className="rounded-lg overflow-hidden shadow-lg">
-            <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2979.1!2d-88.0708!3d41.7994!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNjUwIFdhcnJlbnZpbGxlIFJkLCBTdWl0ZSAxMDAsIExpc2xlLCBJTCA2MDUzMg!5e0!3m2!1sen!2sus!4v1700000000000"
-              width="100%"
-              height="400"
-              style={{ border: 0 }}
-              allowFullScreen
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-              title="AEIM Wealth Management office location"
-            />
-          </Reveal>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            {OFFICES.map((office) => (
+              <Reveal key={office.label}>
+                <h3 className="font-serif text-xl font-semibold text-[#0B1B2B] mb-1">
+                  {office.label}
+                </h3>
+                <p className="text-sm text-[#5A6A7A] mb-4">
+                  {office.street}, {office.cityStateZip}
+                  {office.note && ` — ${office.note}`}
+                </p>
+                <div className="rounded-lg overflow-hidden shadow-lg">
+                  <iframe
+                    src={`https://maps.google.com/maps?q=${encodeURIComponent(office.mapQuery)}&output=embed`}
+                    width="100%"
+                    height="360"
+                    style={{ border: 0 }}
+                    allowFullScreen
+                    loading="lazy"
+                    referrerPolicy="no-referrer-when-downgrade"
+                    title={`${BUSINESS.name} ${office.label} location`}
+                  />
+                </div>
+              </Reveal>
+            ))}
+          </div>
         </div>
       </section>
     </>

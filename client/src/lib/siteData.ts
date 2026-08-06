@@ -4,11 +4,14 @@
 export const BUSINESS = {
   name: "AEIM Wealth Management",
   owner: "Bryan M. Uselding",
+  ownerCredentials: "CFS®, CAS®",
+  ownerFull: "Bryan M. Uselding, CFS®, CAS®",
   phone: "(630) 534-2346",
   phoneRaw: "6305342346",
-  email: "buselidng@aeimwealth.com",
-  address: "650 Warrenville Rd, Suite 100, Lisle, IL 60532",
-  addressShort: "650 Warrenville Rd, Suite 100",
+  phoneVanity: "(630) 534-AEIM",
+  email: "buselding@aeimwealth.com",
+  address: "650 Warrenville Rd, Unit 100, Lisle, IL 60532",
+  addressShort: "650 Warrenville Rd, Unit 100",
   city: "Lisle",
   state: "IL",
   zip: "60532",
@@ -33,6 +36,119 @@ export const BUSINESS = {
     "Fee Transparency",
   ],
 };
+
+export const OFFICES = [
+  {
+    label: "Main Office",
+    street: "650 Warrenville Rd, Unit 100",
+    cityStateZip: "Lisle, IL 60532",
+    note: "",
+    primary: true,
+    mapQuery: "650 Warrenville Rd Unit 100, Lisle, IL 60532",
+  },
+  {
+    label: "Alternative Office",
+    street: "1901 N. Roselle Rd, Suite 800",
+    cityStateZip: "Schaumburg, IL 60195",
+    note: "By appointment only",
+    primary: false,
+    mapQuery: "1901 N Roselle Rd Suite 800, Schaumburg, IL 60195",
+  },
+];
+
+// The four pillars the firm is named after: Assess, Educate, Implement, Monitor
+export const PROCESS_STEPS = [
+  {
+    slug: "assess",
+    step: "01",
+    title: "Assess",
+    quote: "If you don't know where you are going, you will end up someplace else.",
+    attribution: "Yogi Berra",
+    summary:
+      "Before you can get to where you want to go, you must first understand where you are starting.",
+    body: [
+      "Think about using GPS, whether in your car or on your phone. The first step is finding where you are currently, then mapping out the best route to your destination. Creating a financial retirement plan should work the same way.",
+      "This means taking time to Assess, where we evaluate and analyze all your assets, resources, and financial structure. How are your investment assets currently structured, and how will this serve you going forward? What investment strategy are you using now? Are you positioned for protection against excessive taxation, inflation, changes in the economy, and other variables? What income do you need in retirement? What type of retirement income strategy is best suited for you? All of these questions and so many more are part of the critical process we call Assess.",
+      "Unfortunately, life can be hectic and finding time is extremely hard. Most people are so busy with their families, careers, community and church service, and hobbies that they just don't take the time, or don't know how, to thoroughly explore the Assess process.",
+    ],
+  },
+  {
+    slug: "educate",
+    step: "02",
+    title: "Educate",
+    quote: "The time to repair the roof is when the sun is shining.",
+    attribution: "John F. Kennedy",
+    summary:
+      "An informed client is a comfortable client, and a comfortable client has a better chance of staying on plan during turbulent times.",
+    body: [
+      "Our country is facing a real problem. Since 1978 and the establishment of the 401(k) plan, individuals have been tasked with creating, funding, and planning their own retirement. However, we have never been taught how to actually do this. This was never a class in high school or college. We were just expected to do it and learn as we go.",
+      "Now we have more access to information than ever before. 24/7 news channels, tiny phone computers in our pockets, and headlines designed to shock and awe and make us click. We are bombarded with promotions and gimmicks from all sides. How do we cut through all the noise and get to the real information? In all of the confusion, some people procrastinate or just do nothing, while others use their best judgment to do what they can.",
+      "Let me let you in on a little secret: there is no golden bullet or one-size-fits-all financial plan. If there was, we would all just copy it and put it in place for ourselves. As part of the educational process we will help you discover the different paths and plans that might help you get to your desired destination. We will discuss the pros and cons of each path, what each financial product can do well, and what its limitations are.",
+      "Through education we can have a better understanding of the options and choices in front of us. When we understand these options, we have a much better chance of being truly comfortable with our choices, and being comfortable with your plan gives you a greater chance of sustaining the long-term success you are looking for.",
+    ],
+  },
+  {
+    slug: "implement",
+    step: "03",
+    title: "Implement",
+    quote: "It takes as much energy to wish as it does to plan.",
+    attribution: "Eleanor Roosevelt",
+    summary:
+      "Once we help you create and choose your Personal Wealth Plan, our focus turns to careful implementation.",
+    body: [
+      "We focus on the careful implementation of the specific strategies, tactics, and tools designed to help you achieve your unique goals and objectives. Through proper implementation of your plan, we help you get from point A to point B.",
+      "Often, when people experience investment, tax, or legal problems, it is a lack of attention and follow through with the intricate details of implementation.",
+      "We will ensure assets are properly titled, moved from custodian to custodian, and completed in the most tax-efficient manner.",
+    ],
+  },
+  {
+    slug: "monitor",
+    step: "04",
+    title: "Monitor",
+    quote:
+      "No matter how good the team or how efficient the methodology, if we're not solving the right problem, the project fails.",
+    attribution: "Woody Williams",
+    summary:
+      "A plan is only as good as the attention it receives after it is put in place.",
+    body: [
+      "As great as we are at helping you create and implement a highly effective Personal Wealth Plan, we both know that today's world is chaotic and ever changing. Economic conditions both here and globally, the political climate, tax laws, and even your own personal or family situation are constantly changing.",
+      "It's impossible to help you achieve your goals and what matters most without an ongoing, competent monitoring process. Often in the financial planning process there is a lot of work and attention needed upfront. However, once the plan is created and implemented, there still needs to be monitoring.",
+      "The plan needs to be adaptive to any changes the future may hold. Through regular meetings and proper communication, your Personal Wealth Plan stays monitored and adaptive.",
+    ],
+  },
+];
+
+// Areas of advice listed by the firm on the home page
+export const ADVICE_AREAS = [
+  "Wealth Management",
+  "Retirement Planning",
+  "Family Legacy Planning and Estate Tax Elimination",
+  "Regular Annual/Semi-annual Reviews",
+  "Investment Strategies",
+  "Tax Reduction",
+  "Consumer Education",
+  "Consumer Protection",
+  "A Long-Term, Multi-generational Client/Advisor Relationship",
+];
+
+// The firm's three core commitments
+export const CORE_VALUES = [
+  {
+    title: "Independent",
+    icon: "award",
+    body: "As an Independent Financial Advisory Firm, AEIM Wealth Management can give unbiased advice about the whole range of financial products from all the different companies available. This allows us to give our best advice without restriction or pressure to make certain recommendations.",
+  },
+  {
+    title: "Fiduciary",
+    icon: "shield",
+    body: "A fiduciary is a person or organization that acts on behalf of another, putting their clients' interests ahead of their own. Everyone deserves an advisor who acts in their best interest. We act as your fiduciary 100% of the time, which means we are legally obligated to give you the best advice possible at all times.",
+  },
+  {
+    title: "Transparency",
+    icon: "eye",
+    body: "Here at AEIM Wealth Management we believe transparency means trust and open communication. These values are integral to providing comprehensive services to help you achieve your goals. We don't believe in pushing product, hard selling, or hidden fees. With over 17 years of experience, we dedicate our services to preparing creative solutions tailored specifically to you.",
+  },
+];
 
 export const SERVICES = [
   {
