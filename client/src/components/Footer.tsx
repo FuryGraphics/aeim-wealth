@@ -1,6 +1,6 @@
 import { Link } from "wouter";
 import { Phone, Mail, MapPin, Clock } from "lucide-react";
-import { BUSINESS, SERVICES, LOCATIONS } from "@/lib/siteData";
+import { BUSINESS, SERVICES, LOCATIONS, OFFICES } from "@/lib/siteData";
 
 export default function Footer() {
   return (
@@ -24,17 +24,12 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Brand */}
           <div>
-            <div className="flex items-center gap-3 mb-4">
-              <img src="/images/logo.png" alt="AEIM Wealth Management" className="w-10 h-10 object-contain" />
-              <div className="flex flex-col leading-none">
-                <span className="font-serif text-2xl font-bold text-[#C9A84C] tracking-wide">
-                  AEIM
-                </span>
-                <span className="text-[10px] text-white/80 tracking-[0.2em] uppercase mt-1">
-                  Wealth Management
-                </span>
-              </div>
-            </div>
+            <img
+              src="/images/logo-light.png"
+              alt={BUSINESS.name}
+              className="w-40 h-auto mb-5"
+              loading="lazy"
+            />
             <p className="text-sm text-white/60 leading-relaxed">
               Independent, fiduciary wealth management serving families and individuals across DuPage County for {BUSINESS.experience} years.
             </p>
@@ -61,6 +56,14 @@ export default function Footer() {
                   </Link>
                 </li>
               ))}
+              <li>
+                <Link
+                  href="/process"
+                  className="text-sm text-[#C9A84C] hover:underline transition-colors"
+                >
+                  The AEIM Process
+                </Link>
+              </li>
             </ul>
           </div>
 
@@ -95,10 +98,18 @@ export default function Footer() {
                   <Mail className="w-4 h-4 text-[#C9A84C] shrink-0" /> {BUSINESS.email}
                 </a>
               </li>
-              <li className="flex items-start gap-2 text-sm text-white/60">
-                <MapPin className="w-4 h-4 text-[#C9A84C] shrink-0 mt-0.5" />
-                <span>{BUSINESS.address}</span>
-              </li>
+              {OFFICES.map((office) => (
+                <li key={office.label} className="flex items-start gap-2 text-sm text-white/60">
+                  <MapPin className="w-4 h-4 text-[#C9A84C] shrink-0 mt-0.5" />
+                  <span>
+                    <span className="block text-white/80 font-medium">{office.label}</span>
+                    {office.street}, {office.cityStateZip}
+                    {office.note && (
+                      <span className="block text-xs text-white/40">{office.note}</span>
+                    )}
+                  </span>
+                </li>
+              ))}
             </ul>
 
             <h3 className="font-serif text-lg font-semibold text-white mt-6 mb-3">Hours</h3>

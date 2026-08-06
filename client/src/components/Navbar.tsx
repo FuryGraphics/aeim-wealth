@@ -38,8 +38,17 @@ export default function Navbar() {
         <div className="container">
           <div className="flex items-center justify-between h-20">
             {/* Logo */}
-            <Link href="/" className="flex items-center gap-3 shrink-0">
-              <img src="/images/logo.png" alt="AEIM Wealth Management" className="w-10 h-10 object-contain" />
+            <Link
+              href="/"
+              className="flex items-center gap-3 shrink-0"
+              aria-label={`${BUSINESS.name} home`}
+            >
+              <img
+                src="/images/logo-mark-light.png"
+                alt=""
+                aria-hidden="true"
+                className="w-12 h-12 object-contain"
+              />
               <div className="flex flex-col leading-none">
                 <span className="font-serif text-2xl font-bold text-[#C9A84C] tracking-wide">
                   AEIM
@@ -130,6 +139,12 @@ export default function Navbar() {
                 className="text-white/90 hover:text-[#C9A84C] transition-colors text-sm font-medium"
               >
                 About
+              </Link>
+              <Link
+                href="/process"
+                className="text-white/90 hover:text-[#C9A84C] transition-colors text-sm font-medium"
+              >
+                Process
               </Link>
               <Link
                 href="/testimonials"
@@ -238,6 +253,9 @@ export default function Navbar() {
 
                 <Link href="/about" className="block py-3 text-white border-b border-white/10 font-medium">
                   About
+                </Link>
+                <Link href="/process" className="block py-3 text-white border-b border-white/10 font-medium">
+                  Process
                 </Link>
                 <Link href="/testimonials" className="block py-3 text-white border-b border-white/10 font-medium">
                   Testimonials

@@ -34,7 +34,7 @@ export default function LocationPage({ slug }: { slug: string }) {
       telephone: BUSINESS.phone,
       address: {
         "@type": "PostalAddress",
-        streetAddress: "650 Warrenville Rd, Suite 100",
+        streetAddress: BUSINESS.addressShort,
         addressLocality: "Lisle",
         addressRegion: "IL",
         postalCode: "60532",
